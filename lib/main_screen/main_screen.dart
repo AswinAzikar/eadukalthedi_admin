@@ -1,3 +1,5 @@
+import 'package:eadukalthedi_admin/utils/log_utils.dart';
+import 'package:eadukalthedi_admin/utils/size_utils.dart';
 import 'package:flutter/material.dart';
 
 class MainScreen extends StatefulWidget {
@@ -10,6 +12,12 @@ class MainScreen extends StatefulWidget {
 class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    logesh.i(SizeUtils.deviceType);
+    return Scaffold(
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        title: Text('MainScreen'),
+      ),
+    );
   }
 }

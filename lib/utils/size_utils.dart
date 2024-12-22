@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 
 // These are the Viewport values of your Figma Design.
 // These are used in the code as a reference to create your UI Responsively.
-const num FIGMA_DESIGN_WIDTH = 430;
-const num FIGMA_DESIGN_HEIGHT = 933;
+const num FIGMA_DESIGN_WIDTH = 1024;
+const num FIGMA_DESIGN_HEIGHT = 1440;
 const num FIGMA_DESIGN_STATUS_BAR = 0;
 typedef ResponsiveBuild = Widget Function(
   BuildContext context,
@@ -41,7 +41,7 @@ class SizeUtils {
 
   /// Type of Device
   ///
-  /// This can either be mobile or tablet
+  /// This can either be mobile, tablet, or desktop
   static late DeviceType deviceType;
 
   /// Device's Height
@@ -68,7 +68,22 @@ class SizeUtils {
           boxConstraints.maxHeight.isNonZero(defaultValue: FIGMA_DESIGN_WIDTH);
       height = boxConstraints.maxWidth.isNonZero();
     }
-    deviceType = DeviceType.mobile;
+
+    // Debug prints to check the calculated width and height
+    print('Screen width: $width');
+    print('Screen height: $height');
+
+    // Determine device type based on width
+    if (width >= 1024) {
+      deviceType = DeviceType.desktop;
+    } else if (width >= 600) {
+      deviceType = DeviceType.tablet;
+    } else {
+      deviceType = DeviceType.mobile;
+    }
+
+    // Debug print to check the device type
+    print('Device type: $deviceType');
   }
 }
 
@@ -86,7 +101,7 @@ extension ResponsiveExtension on num {
   double get h => ((this * _width) / FIGMA_DESIGN_WIDTH);
 
   /// This method is used to set padding/margin (for the top and bottom side) &
-  /// height of the screen or widFlutter Demoget according to the Viewport height.
+  /// height of the screen or widget according to the Viewport height.
   double get v =>
       (this * _height) / (FIGMA_DESIGN_HEIGHT - FIGMA_DESIGN_STATUS_BAR);
 
