@@ -13,10 +13,23 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     logesh.i(SizeUtils.deviceType);
+
+    logesh.i(SizeUtils.orientation);
+
     return Scaffold(
+      body: Container(
+        color: Colors.yellow,
+        width: SizeUtils.width * 0.31,
+        child: Column(
+          children: [],
+        ),
+      ),
+
+      drawerEnableOpenDragGesture: true,
+      // drawer: Drawer(),
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        title: Text('MainScreen'),
+        title: Text('Logo or AppName'),
       ),
     );
   }
