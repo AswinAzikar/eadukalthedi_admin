@@ -36,6 +36,7 @@ class _SidebarNavigatorState extends State<SidebarNavigator> {
           color: widget.inactiveColor,
           child: Column(
             children: [
+              widget.addtionalWidget ?? SizedBox(),
               ...widget.buttonLabels
                   .asMap()
                   .map((index, label) => MapEntry(
