@@ -1,4 +1,5 @@
 import 'package:eadukalthedi_admin/routes/routes.dart';
+import 'package:eadukalthedi_admin/themes/theme.dart';
 import 'package:eadukalthedi_admin/utils/size_utils.dart';
 import 'package:flutter/material.dart';
 
@@ -14,7 +15,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: const MainScreen(), 
+      theme: AppTheme.lightTheme,
+      home: const MainScreen(),
       onGenerateRoute: Routes.generateRoute,
       debugShowCheckedModeBanner: false,
       builder: (context, child) => Sizer(
