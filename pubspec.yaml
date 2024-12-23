@@ -15,6 +15,7 @@ dependencies:
   logger: ^2.5.0
   flutter_gen: ^5.8.0
   lucide_icons: ^0.257.0
+  gap: ^3.0.1
 
 dev_dependencies:
   flutter_test:
