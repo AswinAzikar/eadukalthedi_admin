@@ -32,8 +32,17 @@ class _SidebarNavigatorState extends State<SidebarNavigator> {
     return Row(
       children: [
         Container(
+          decoration: BoxDecoration(
+            color: widget.inactiveColor,
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withOpacity(0.2),
+                blurRadius: 10,
+                spreadRadius: 5,
+              ),
+            ],
+          ),
           width: SizeUtils.width * 0.3,
-          color: widget.inactiveColor,
           child: Column(
             children: [
               widget.addtionalWidget ?? SizedBox(),
@@ -64,7 +73,9 @@ class _SidebarNavigatorState extends State<SidebarNavigator> {
         });
       },
       child: Container(
-        color: isActive ? widget.activeColor : widget.inactiveColor,
+        decoration: BoxDecoration(
+          color: isActive ? widget.activeColor : widget.inactiveColor,
+        ),
         padding: const EdgeInsets.symmetric(
           vertical: paddingLarge,
           horizontal: paddingLarge,

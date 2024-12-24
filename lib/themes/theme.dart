@@ -26,6 +26,7 @@ class AppTheme {
       //   ),
       // ),
       appBarTheme: AppBarTheme(
+        
         iconTheme: const IconThemeData(
           color: Colors.black,
         ),

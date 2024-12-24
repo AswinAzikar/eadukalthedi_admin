@@ -16,6 +16,7 @@ dependencies:
   flutter_gen: ^5.8.0
   lucide_icons: ^0.257.0
   gap: ^3.0.1
+  fl_chart: ^0.70.0
 
 dev_dependencies:
   flutter_test:

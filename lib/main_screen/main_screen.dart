@@ -1,3 +1,4 @@
+import 'package:eadukalthedi_admin/dashboard/dashboard.dart';
 import 'package:eadukalthedi_admin/extensions/font_extension.dart';
 import 'package:eadukalthedi_admin/main_screen/sidebar_navigator/sidebar_navigator.dart';
 import 'package:eadukalthedi_admin/utils/size_utils.dart';
@@ -13,6 +14,8 @@ class MainScreen extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
+          primary: false,
+          backgroundColor: Colors.white,
           leadingWidth: SizeUtils.width * .31,
           leading: Center(
               child: Text(
@@ -30,7 +33,7 @@ class MainScreen extends StatelessWidget {
           ],
           buttonLabels: ['Dashboard', 'Authors', 'Users', 'Special Category'],
           pages: [
-            Center(child: Text('Dashboard')),
+            Dashboard(),
             Center(child: Text('Authors')),
             Center(child: Text('Users')),
             Center(child: Text('Special Category')),
